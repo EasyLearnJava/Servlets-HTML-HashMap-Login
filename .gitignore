@@ -2,8 +2,10 @@
 ## Eclipse
 #################
 
+target
+META-INF
+
 *.pydevproject
-.project
 .metadata
 bin/
 tmp/
@@ -13,7 +15,6 @@ tmp/
 *~.nib
 local.properties
 .classpath
-.settings/
 .loadpath
 
 # External tool builders
