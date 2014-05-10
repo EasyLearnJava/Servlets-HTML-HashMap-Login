@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.easylearnjava.util.Constants;
+
 /**
  * 
  * @author rnr
@@ -28,7 +30,7 @@ public class LoginServlet extends HttpServlet{
 	Map<String, String> hashMapDB = new HashMap<String, String>();
 	
 	/**
-	 * User will be redirected to login page if the success link is access directly
+	 * User will be redirected to login page if the success link is accessed directly
 	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -63,14 +65,14 @@ public class LoginServlet extends HttpServlet{
 			
 			if(isValid){			      
 				System.out.println("Valid login cridentials entered");
-				response.sendRedirect("success.html");
+				response.sendRedirect("loginSuccess.html");
 			}else{
 				System.out.println("invalid login cidentials");
 				response.sendRedirect("loginInvalid.html");
 			}		
 		}catch(Exception ex){
 			ex.printStackTrace();
-			System.out.println("Exception while processing request.");
+			System.out.println(Constants.GLOBAL_EXCEPTION_MESSAGE);
 			response.sendRedirect("login.html");
 		}
 	}

@@ -3,6 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Servlet HTML HashMap Login Example</title>
+
+<!-- link java script file -->
+<script type="text/javascript" src="appJS.js"></script>
+
 </head>
 
 <body>
@@ -12,20 +16,19 @@
 		<table align="center" border="0">
 			<tr>
 				<td class="right">username :</td>
-				<td class="left"><input type="text" name="usernameTB"></td>
+				<td class="left"><input type="text" name="usernameTB" id="userid"></td>
 			</tr>
 			<tr>
 				<td class="right">password :</td>
-				<td class="left"><input type="password" name="passwordTB"><br></td>
+				<td class="left"><input type="password" name="passwordTB" id="password"><br></td>
 			</tr>
 			<tr>
-				<td class="right"><input type="submit" value="login"></td>
-				<td class="left" style="color: red;">Invalid login cridentials</td>
+				<td class="right"><input type="submit" value="login" onclick="return validateData();"></td>
+				<td></td>
 			</tr>
 		</table>
 	</form>
 
-	<br>
 
 </body>
 </html>
