@@ -1,1 +1,1 @@
-{"mixinTypes":["contribution"],"builders":{"configs":{}},"runners":{"configs":{}},"description":"","type":"blank","attributes":{"contribute_branch":["master"],"contribute_mode":["contribute"]}}
+{"mixinTypes":["contribution"],"builders":{"configs":{}},"runners":{"configs":{}},"description":"Login using Servlet, HTML, HashMap","type":"blank","attributes":{"contribute_branch":["master"],"contribute_mode":["contribute"]}}
