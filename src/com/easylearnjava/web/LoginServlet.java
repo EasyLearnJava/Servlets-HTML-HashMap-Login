@@ -70,10 +70,10 @@ public class LoginServlet extends HttpServlet {
 			boolean isValid = isValidPassword(userNameStr, passwordStr);
 
 			if (isValid) {
-				System.out.println("Valid login cridentials entered");
+				System.out.println("Valid login credentials entered");
 				response.sendRedirect("loginSuccess.html");
 			} else {
-				System.out.println("invalid login cidentials");
+				System.out.println("invalid login credentials");
 				response.sendRedirect("loginInvalid.html");
 			}
 		} catch (Exception ex) {
