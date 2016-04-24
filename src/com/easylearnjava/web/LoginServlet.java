@@ -1,6 +1,7 @@
 package com.easylearnjava.web;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,6 +35,7 @@ public class LoginServlet extends HttpServlet {
 		hashMapDB.put("raghu", "secret");
 		hashMapDB.put("naveen", "topsecret");
 	}
+	
 
 	/**
 	 * User will be redirected to login page if the success link is accessed directly
@@ -42,7 +44,28 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		response.sendRedirect("loginInvalidURL.html");
+		PrintWriter out = response.getWriter(  ); 
+	    response.setContentType("text/html");   
+		out.println("<html>");
+		out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">");
+		out.println("<title>Servlet HTML HashMap Login Example</title>");
+		out.println("<script type=\"text/javascript\" src=\"js/appJS.js\"></script>");
+		out.println("</head>");
+		out.println("<body>");
+		out.println("<h2 align=\"center\">Login functionality implemented using Servlet, HTML and HashMap</h2>");
+		out.println("<form action=\"login\" method=\"post\">");
+		out.println("<table align=\"center\" border=\"0\">");
+		out.println("<tr> <td >username :</td>");
+		out.println("<td ><input type=\"text\" name=\"usernameTB\" id=\"userid\"></td>");
+		out.println("</tr> <tr> <td>password :</td>");
+		out.println("<td ><input type=\"password\" name=\"passwordTB\" id=\"password\"><br></td>");
+		out.println("</tr> <tr>");
+		out.println("<td ><input type=\"submit\" value=\"login\" onclick=\"return validateData();\"></td>");
+		out.println("<td> </td> </tr>");
+		out.println("</table>");
+		out.println("</form>");
+		out.println("</body>");
+		out.println("</html>");
 	}
 	
 
@@ -63,23 +86,88 @@ public class LoginServlet extends HttpServlet {
 			// inputdata validation
 			boolean isDataValid = isValidData(userNameStr, passwordStr);
 			if (!isDataValid) {
-				response.sendRedirect("loginInvalidData.html");
+				PrintWriter out = response.getWriter(  ); 
+			    response.setContentType("text/html");   
+				out.println("<html>");
+				out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">");
+				out.println("<title>Servlet HTML HashMap Login Example</title>");
+				out.println("<script type=\"text/javascript\" src=\"js/appJS.js\"></script>");
+				out.println("</head>");
+				out.println("<body>");
+				out.println("<h2 align=\"center\">Login functionality implemented using Servlet, HTML and HashMap</h2>");
+				out.println("<form action=\"login\" method=\"post\">");
+				out.println("<table align=\"center\" border=\"0\">");
+				out.println("<tr> <td >username :</td>");
+				out.println("<td ><input type=\"text\" name=\"usernameTB\" id=\"userid\"></td>");
+				out.println("</tr> <tr> <td>password :</td>");
+				out.println("<td ><input type=\"password\" name=\"passwordTB\" id=\"password\"><br></td>");
+				out.println("</tr> <tr>");
+				out.println("<td ><input type=\"submit\" value=\"login\" onclick=\"return validateData();\"></td>");
+				out.println("<td style=\"color: red;\">username/password cannot be empty, <br> must contain atleast 5 characters each</td></tr>");
+				out.println("</table>");
+				out.println("</form>");
+				out.println("</body>");
+				out.println("</html>");
 				return;
 			}
 
 			boolean isValid = isValidPassword(userNameStr, passwordStr);
 
 			if (isValid) {
-				System.out.println("Valid login credentials entered");
-				response.sendRedirect("loginSuccess.html");
+				PrintWriter out = response.getWriter(  ); 
+			    response.setContentType("text/html");   
+			    out.println("<a href=\"login.html\"> LogOut ...</a>"); 
+			    out.println("<h2>Successfully logged in to the application ... :)</h2>");
 			} else {
-				System.out.println("invalid login credentials");
-				response.sendRedirect("loginInvalid.html");
+				System.out.println("Invalid login credentials");
+				PrintWriter out = response.getWriter(  ); 
+			    response.setContentType("text/html");   
+				out.println("<html>");
+				out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">");
+				out.println("<title>Servlet HTML HashMap Login Example</title>");
+				out.println("<script type=\"text/javascript\" src=\"js/appJS.js\"></script>");
+				out.println("</head>");
+				out.println("<body>");
+				out.println("<h2 align=\"center\">Login functionality implemented using Servlet, HTML and HashMap</h2>");
+				out.println("<form action=\"login\" method=\"post\">");
+				out.println("<table align=\"center\" border=\"0\">");
+				out.println("<tr> <td >username :</td>");
+				out.println("<td ><input type=\"text\" name=\"usernameTB\" id=\"userid\"></td>");
+				out.println("</tr> <tr> <td>password :</td>");
+				out.println("<td ><input type=\"password\" name=\"passwordTB\" id=\"password\"><br></td>");
+				out.println("</tr> <tr>");
+				out.println("<td ><input type=\"submit\" value=\"login\" onclick=\"return validateData();\"></td>");
+				out.println("<td style=\"color: red;\">Invalid login credentials</td></tr>");
+				out.println("</table>");
+				out.println("</form>");
+				out.println("</body>");
+				out.println("</html>");
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			System.out.println(Constants.GLOBAL_EXCEPTION_MESSAGE);
-			response.sendRedirect("login.html");
+			PrintWriter out = response.getWriter(  ); 
+		    response.setContentType("text/html");   
+			out.println("<html>");
+			out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">");
+			out.println("<title>Servlet HTML HashMap Login Example</title>");
+			out.println("<script type=\"text/javascript\" src=\"js/appJS.js\"></script>");
+			out.println("</head>");
+			out.println("<body>");
+			out.println("<h2 align=\"center\">Login functionality implemented using Servlet, HTML and HashMap</h2>");
+			out.println("<form action=\"login\" method=\"post\">");
+			out.println("<table align=\"center\" border=\"0\">");
+			out.println("<tr> <td >username :</td>");
+			out.println("<td ><input type=\"text\" name=\"usernameTB\" id=\"userid\"></td>");
+			out.println("</tr> <tr> <td>password :</td>");
+			out.println("<td ><input type=\"password\" name=\"passwordTB\" id=\"password\"><br></td>");
+			out.println("</tr> <tr>");
+			out.println("<td ><input type=\"submit\" value=\"login\" onclick=\"return validateData();\"></td>");
+			out.println("<td style=\"color: red;\">Please try again after some time</td></tr>");
+			out.println("</table>");
+			out.println("</form>");
+			out.println("</body>");
+			out.println("</html>");			
 		}
 	}
 	

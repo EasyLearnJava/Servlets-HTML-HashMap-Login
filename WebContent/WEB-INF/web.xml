@@ -7,7 +7,7 @@
 	<display-name>Servlet-HTML-HashMap-Login</display-name>
 
 	<welcome-file-list>
-		<welcome-file>login.html</welcome-file>
+		<welcome-file>login</welcome-file>
 	</welcome-file-list>
 
 	<context-param>
